@@ -36,3 +36,19 @@
 - `docker container stats` - Serve para visualizar os recursos que são utilizados pelo container.
 - `docker container inspect iddocontainer` - inspecionar o container pra pegar o ip do nginx
 - `curl ip` - Você conseguirá visualizar a página html do nginx pelo ip do container
+
+
+### Sobre Volumes
+
+- Criar volumes no docker
+- Primeiro temos que entender que, ao encerrarmos um container, tudo que estava nele morre, inclusive a aplicação e os dados que estão transitando nesta aplicação.
+- Um volume no Docker seria uma forma de persistir a informação que queremos persistir mesmo após o encerramento do container.
+
+### Como criar um volume?
+- Você não necessariamente "cria volume", lembre-se, um container é apenas um alocamento de processamento e memória dentro do sistema operacional HOST, portanto, criar um volume é justamente alocar uma parte de armazenamento do HOST, assim como a memória e o processamento.
+- `mkdir /opt/teste` : criando um diretório /teste no HOST
+- Formas de alocação e criação de volumes:
+	- Tipo bind: Eu já tenho um diretório que será montado 
+	- Tipo volume: É o padrão, quando não é feita a gestão o diretório criado tem nome aleatório
+- `docker container run -ti --mount type=bind,src=/opt/teste,dst=/teste debian` : Esse comando está querendo rodar um container no modo daemon e também montar um volume do tipo bind no diretório /teste dentro do container e os dados do container serão trazidos para /opt/teste no HOST
+	- Basicamente, eu faço com que o diretório do container `/teste` espelhe em um diretório do HOST (`/opt/teste`) todos os dados criados.
