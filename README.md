@@ -12,7 +12,7 @@ O container ele se utiliza de ferramentas que já existem no Linux, que é o CGR
 
 ### Definir o docker
 
-[docker-imagem](https://dataat.github.io/introducao-docker/res/2_docker/docker_api_infra.jpg)
+![docker-imagem](https://dataat.github.io/introducao-docker/res/2_docker/docker_api_infra.jpg)
 
 ### O que é?
 É um software open-source para gerenciar containers e criação de imagens através de um arquivo Dockerfile ou criação de várias imagens Docker.
